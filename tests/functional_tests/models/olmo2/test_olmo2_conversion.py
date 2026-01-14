@@ -88,11 +88,6 @@ class TestOLMo2Conversion:
 
         model = model.bfloat16()
 
-        # Debug: Check model dtype before saving
-        for name, param in model.named_parameters():
-            print(f"Before save - {name}: {param.dtype}")
-            break  # Just check the first parameter
-
         # Save the model
         model.save_pretrained(model_dir)
 
@@ -124,11 +119,6 @@ class TestOLMo2Conversion:
         # Verify config was saved
         config_path = model_dir / "config.json"
         assert config_path.exists(), f"Config file not created at {config_path}"
-
-        # Debug: Read and check the saved config
-        with open(config_path, "r") as f:
-            saved_config = json.load(f)
-            print(f"Saved config torch_dtype: {saved_config.get('torch_dtype')}")
 
         return str(model_dir)
 

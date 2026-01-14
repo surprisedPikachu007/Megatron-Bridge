@@ -289,7 +289,7 @@ __all__ = [
     "OlMoEModelProvider",
     "Qwen2ModelProvider",
     "Qwen2ModelProvider500M",
-    "Qwen2ModelProvider1P7B",
+    "Qwen2ModelProvider1P5B",
     "Qwen2ModelProvider7B",
     "Qwen2ModelProvider72B",
     "Qwen25ModelProvider500M",
